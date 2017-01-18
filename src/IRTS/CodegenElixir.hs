@@ -52,7 +52,7 @@ idrisConst c =
     BI n -> show n
     Fl d -> show d
     Ch x -> show x
-    Str s -> "\"" ++ s ++ "\""
+    Str s -> show s
     B8 w -> show w              -- may need to simulate types with tagged tuples
     B16 w -> show w
     B32 w -> show w
