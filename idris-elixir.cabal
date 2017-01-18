@@ -1,6 +1,6 @@
 Name:           idris-elixir
 Version:        0.0.0.1
-License:        Apache2
+License:        Apache-2.0
 License-file:   LICENSE
 Author:         Jacob Mitchell
 Maintainer:	Jacob Mitchell <jmitchell@member.fsf.org>
