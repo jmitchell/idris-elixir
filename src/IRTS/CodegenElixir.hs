@@ -137,11 +137,11 @@ simplified :: [(Name, SDecl)] -> Maybe Doc
 simplified = Just . vcat . map namedSDecl
 
 namedSDecl :: (Name, SDecl) -> Doc
-namedSDecl (n, d) = text (ppShow n) $$ decl d
+namedSDecl (n, d) = {- text (ppShow n) $$ -} decl d
   where
     decl :: SDecl -> Doc
     decl (SFun fnName names num ex) =
-      text (ppShow fnName ++ "(" ++ intercalate ", " (map ppShow names) ++ ")") $$
+      blank $$ text (ppShow fnName ++ "(" ++ intercalate ", " (map ppShow names) ++ ")") $$
       indentMany
         [ ppDoc num
         , expr ex
@@ -205,8 +205,8 @@ lambdaLifted _decls = Nothing
 elixirComment :: String -> Doc
 elixirComment c = text $ "# " ++ c
 
--- blankLines :: Int -> Doc
--- blankLines n = text $ replicate (n-1) '\n'
+blankLines :: Int -> Doc
+blankLines n = text $ replicate (n-1) '\n'
 
--- blank :: Doc
--- blank = blankLines 1
+blank :: Doc
+blank = blankLines 1
