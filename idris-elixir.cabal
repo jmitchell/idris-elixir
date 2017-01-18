@@ -21,6 +21,7 @@ Executable idris-elixir
                 , haskeline >= 0.7
                 , mtl
                 , transformers
+                , pretty
 
   other-modules: IRTS.CodegenElixir
 
